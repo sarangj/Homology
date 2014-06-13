@@ -1,0 +1,11 @@
+So far this contains two .py files that will be used to compute
+Homology for a simplicial complex.  Boundary.py takes a complex K
+and returns the boundary map as a matrix.  Reduction.py performs
+the redcution algorithm outlined in Munkres' Elements of 
+Algebraic Topology (and likely in any algebraic topology text).
+The last thing needed will be to take the output of reduction
+and give the homology groups. Additionally, I will likely try to
+write code to compute persistent homology.  
+
+I'll also add more instructions on how to use the code already
+up.
