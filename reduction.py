@@ -29,7 +29,7 @@ def findMin(A):
     print min_i,min_j
     return min,min_i,min_j
 
-def row_op(A,i,k,j,q):
+def col_op(A,i,k,j,q):
     print 'row operation'
     #q = int(A[k,j])/int(A[i,j])
     #r = int(A[k,j])%int(A[i,j])
@@ -37,7 +37,7 @@ def row_op(A,i,k,j,q):
     print A
     return A
 
-def col_op(A,i,k,j,q):
+def row_op(A,i,k,j,q):
     print 'column operation'
     #q = int(A[i,k])/int(A[i,j])
     A[k,:] = A[k,:] -  q*A[i,:]
@@ -67,14 +67,14 @@ def reduce(A):
     for k in xrange(n):
         if A[i,k] % a != 0:
            q = int(A[i,k])/int(a)
-           A = row_op(A,i,k,j,q)
+           A = col_op(A,i,k,j,q)
            done = True
            break
     if not done:
        for k in xrange(m):
            if A[k,j] % a != 0:
               q = int(A[k,j])/int(a)
-              A = col_op(A,i,k,j,q)
+              A = row_op(A,i,k,j,q)
               done = True
               break
     if not done:
@@ -114,11 +114,7 @@ def div_mat(a,A):
     return True               
 
 
-K = np.array([[1,1,0,0],[0,1,1,0],[0,0,1,1],[-1,0,0,-1],[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
-print 'K', K
-A = boundary.boundary(K,2)
 
-print A
 
 def red_alg(A):
     m,n = np.shape(A)
@@ -142,18 +138,7 @@ def red_alg(A):
     return A
 
 
-K = np.array([[1,1,0,0],[0,1,1,0],[0,0,1,1],[-1,0,0,-1],[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
-print 'K', K
-A = boundary.boundary(K,2)
 
-print A
-
-
-
-
-
-
-print 'A',A
 
 
     
